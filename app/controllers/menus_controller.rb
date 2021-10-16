@@ -9,12 +9,17 @@ class MenusController < ApplicationController
     end
     
     def new
-        
+    @menu = Menu.new    
     end    
     
     def create
     @menu = Menu.new(params.require(:menu).permit(:item,:price))
-    @menu.save
+    if @menu.save
+        flash[:notice] = "A new item has been created successfully!"
     redirect_to @menu
+    else
+        render 'new'
+    end    
     end
+    
 end
