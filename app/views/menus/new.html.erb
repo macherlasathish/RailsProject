@@ -1,0 +1,14 @@
+<h1>Create a New Menu</h1>
+<%= form_with scope: :menu, url: menus_path, local: true  do |f| %>
+<p>
+<%=f.label :item%><br>
+<%=f.text_field :item%>
+</p>
+<p>
+<%=f.label :price%><br>
+<%=f.number_field :price%>
+</p>
+<p>
+<%=f.submit%>
+</p>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Today's Exclusive Dishes</h1>
+<table>
+  <tr>
+    <th>Items</th>
+    <th>Price</th>
+  </tr>
+<%@menus.each do |menu| %>
+    <tr>
+    <td><%=menu.item%></td>
+    <td><%=menu.price%></td>
+    </tr>
+<%end%>
+</table>
