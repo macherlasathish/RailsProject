@@ -3,11 +3,16 @@
   <tr>
     <th>Items</th>
     <th>Price</th>
+    <th colspan="2">Actions</th>
   </tr>
 <%@menus.each do |menu| %>
     <tr>
     <td><%=menu.item%></td>
     <td><%=menu.price%></td>
+    <td><%=link_to "Edit",edit_menu_path(menu) %></td>
+    <td><%=link_to "Delete",menu_path(menu), method: :delete %></td>
     </tr>
 <%end%>
 </table>
+<p><%= link_to 'Create New Menu', new_menu_path %> </p>
+

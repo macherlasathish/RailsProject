@@ -1,0 +1,22 @@
+<% if @menu.errors.any? %> 
+  <h2>The following errors prevented the menu from being saved</h2> 
+  <ul> 
+    <% @menu.errors.full_messages.each do |msg| %> 
+      <li><%= msg %></li> 
+    <% end %> 
+  </ul>
+<% end %>
+
+<%= form_with(model: @menu, local: true) do |f| %>
+<p>
+<%=f.label :item%><br>
+<%=f.text_field :item%>
+</p>
+<p>
+<%=f.label :price%><br>
+<%=f.number_field :price%>
+</p>
+<p>
+<%=f.submit%>
+</p>
+<% end %>
