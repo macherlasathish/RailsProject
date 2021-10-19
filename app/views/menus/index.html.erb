@@ -1,18 +1,13 @@
-<h1>Today's Exclusive Dishes</h1>
-<table>
-  <tr>
-    <th>Items</th>
-    <th>Price</th>
-    <th colspan="2">Actions</th>
-  </tr>
+<div class="container"><h2>Today's Exclusive Dishes</h2>
 <%@menus.each do |menu| %>
-    <tr>
-    <td><%=menu.item%></td>
-    <td><%=menu.price%></td>
-    <td><%=link_to "Edit",edit_menu_path(menu) %></td>
-    <td><%=link_to "Delete",menu_path(menu), method: :delete %></td>
-    </tr>
+  <div class="row">
+  <div class="col"><%=menu.item%></div>
+  <div class="col"><%=menu.price%></div>
+  <div class="col btn btn-sm"><%=link_to "Edit",edit_menu_path(menu) %></div>
+  <div class="col btn btn-sm"><%=link_to "Delete",menu_path(menu) %></div>
+  </div>
 <%end%>
-</table>
 <p><%= link_to 'Create New Menu', new_menu_path %> </p>
+</div>
+
 
